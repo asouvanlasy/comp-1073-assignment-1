@@ -13,6 +13,8 @@ var Button3 = document.querySelector('.btn3');
 var Button4 = document.querySelector('.btn4');
 var Button5 = document.querySelector('.btn5');
 var speakButton = document.querySelector('.speakBtn');
+var Button6 = document.querySelector('.btn6');
+var Button7 = document.querySelector('.btn7');
 
 const nouns = ["The turkey","Mom","Dad","The dog","My teacher","The elephant","The cat"]; 
 const verbs = ["sat on","ate","danced with","saw","doesn't like","kissed"];
@@ -51,6 +53,8 @@ speakButton.onclick = function() {
 		textToSpeak += " ";
 	}
 	speakNow(textToSpeak);
+	// output the story to the user as text as it is being spoken
+	document.querySelector('.storyText').innerHTML = textToSpeak;
 }
 // Click events for each button, each with it's own corresponding array of words
 // When pressed, each button sets a different part of the sentence to random word
@@ -68,4 +72,16 @@ Button4.onclick = function() {
 }
 Button5.onclick = function() {
 	selectWord(places, 4);
+}
+// Button6 sets every part of the sentence to a random word
+Button6.onclick = function() {
+	selectWord(nouns, 0);
+	selectWord(verbs, 1);
+	selectWord(adjectives, 2);
+	selectWord(animals, 3);
+	selectWord(places, 4);
+}
+// Button7 resets the sentence back to an empty array
+Button7.onclick = function() {
+	sentence = ["","","","",""];
 }
