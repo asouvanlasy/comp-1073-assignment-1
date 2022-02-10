@@ -6,16 +6,18 @@
 var synth = window.speechSynthesis;
 // Learn more about SpeechSynthesis.speak() at https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesis/speak
 var textToSpeak = 'This is the text string that you will generate with your script';
-// Buttons
-var Button1 = document.querySelector('.btn1');
-var Button2 = document.querySelector('.btn2');
-var Button3 = document.querySelector('.btn3');
-var Button4 = document.querySelector('.btn4');
-var Button5 = document.querySelector('.btn5');
-var speakButton = document.querySelector('.speakBtn');
-var Button6 = document.querySelector('.btn6');
-var Button7 = document.querySelector('.btn7');
 
+// Buttons
+var button1 = document.querySelector('#btn1');
+var button2 = document.querySelector('#btn2');
+var button3 = document.querySelector('#btn3');
+var button4 = document.querySelector('#btn4');
+var button5 = document.querySelector('#btn5');
+var speakButton = document.querySelector('#speakBtn');
+var button6 = document.querySelector('#btn6');
+var button7 = document.querySelector('#btn7');
+
+// Word bank
 const nouns = ["The turkey","Mom","Dad","The dog","My teacher","The elephant","The cat"]; 
 const verbs = ["sat on","ate","danced with","saw","doesn't like","kissed"];
 const adjectives = ["a funny","a scary","a goofy","a slimy","a barking","a fat"]
@@ -54,34 +56,35 @@ speakButton.onclick = function() {
 	}
 	speakNow(textToSpeak);
 	// output the story to the user as text as it is being spoken
-	document.querySelector('.storyText').innerHTML = textToSpeak;
+	document.querySelector('#storyText').innerHTML = textToSpeak;
 }
+
 // Click events for each button, each with it's own corresponding array of words
 // When pressed, each button sets a different part of the sentence to random word
-Button1.onclick = function() {
+button1.onclick = function() {
 	selectWord(nouns, 0);
 }
-Button2.onclick = function() {
+button2.onclick = function() {
 	selectWord(verbs, 1);
 }
-Button3.onclick = function() {
+button3.onclick = function() {
 	selectWord(adjectives, 2);
 }
-Button4.onclick = function() {
+button4.onclick = function() {
 	selectWord(animals, 3);
 }
-Button5.onclick = function() {
+button5.onclick = function() {
 	selectWord(places, 4);
 }
-// Button6 sets every part of the sentence to a random word
-Button6.onclick = function() {
+// button6 sets every part of the sentence to a random word
+button6.onclick = function() {
 	selectWord(nouns, 0);
 	selectWord(verbs, 1);
 	selectWord(adjectives, 2);
 	selectWord(animals, 3);
 	selectWord(places, 4);
 }
-// Button7 resets the sentence back to an empty array
-Button7.onclick = function() {
+// button7 resets the sentence back to an empty array
+button7.onclick = function() {
 	sentence = ["","","","",""];
 }

@@ -4,25 +4,52 @@
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title>Assignment 1 | COMP1073 Client-Side JavaScript</title>
-	<link rel="stylesheet" href="css/normalize.css" />
-	<link rel="stylesheet" href="css/main.css" />
+
+	<!-- Bootstrap -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" href="css/styles.css">
 </head>
 
-<body>
-	<!-- buttons to generate story -->
-	<button class='btn1'>1</button>
-	<button class='btn2'>2</button>
-	<button class='btn3'>3</button>
-	<button class='btn4'>4</button>
-	<button class='btn5'>5</button>
-	<!-- button to speak story -->
-	<button class='speakBtn'>Speak the value of var textToSpeak</button>
-	<!-- button to generate a random story -->
-	<button class='btn6'>Generate a random story</button>
-	<!-- button to reset the story to blank -->
-	<button class='btn7'>Reset the story</button>
-	<!-- story to be shown to the user in text form -->
-	<p class="storyText"></p>
-	<script src="js/app.js"></script>
+<body class="text-center">
+	<h1>See 'N' Say Storymaker</h1>
+	<h2>JavaScript Edition</h2>
+
+	<!-- Word selection panels -->
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h3>Select Random Words</h3>
+		</div>
+
+		<div class="panel-body">
+			<!-- Buttons to generate story -->
+			<button id="btn1" class="btn">1</button>
+			<button id="btn2" class="btn">2</button>
+			<button id="btn3" class="btn">3</button>
+			<button id="btn4" class="btn">4</button>
+			<button id="btn5" class="btn">5</button>
+			<br><br>
+			<!-- Button to generate a random story -->
+			<button id="btn6" class="btn btn-primary">Generate a random story</button>
+		</div>
+	</div>
+
+	<!-- Output panels -->
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h3>Read Aloud</h3>
+		</div>
+		
+		<div class="panel-body">
+			<!-- Button to speak story -->
+			<button id="speakBtn" class="btn btn-success">Speak the value of var textToSpeak</button>
+			<br><br>
+			<!-- Button to reset the story to blank -->
+			<button id="btn7" class="btn btn-warning	">Reset the story</button>
+			<br><br>
+			<!-- Story to be shown to the user in text form -->
+			<p id="storyText"></p>
+			<script src="js/app.js"></script>
+		</div>
+	</div>
 </body>
 </html>
