@@ -6,50 +6,83 @@
 	<title>Assignment 1 | COMP1073 Client-Side JavaScript</title>
 
 	<!-- Bootstrap -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 	<link rel="stylesheet" href="css/styles.css">
 </head>
 
-<body class="text-center">
+<body class="container text-center my-3">
 	<h1>See 'N' Say Storymaker</h1>
 	<h2>JavaScript Edition</h2>
+	<div class="row">
+		<div class="col-sm-6">
+			<!-- Word selection card -->
+			<div class="card mt-3">
+				<div class="card-header">
+					<h3>Select Random Words</h3>
+				</div>
 
-	<!-- Word selection panels -->
-	<div class="panel panel-default">
-		<div class="panel-heading">
-			<h3>Select Random Words</h3>
+				<div class="card-body">
+					<!-- Buttons to generate story -->
+					<button id="btn1" class="btn btn-outline-secondary">1</button>
+					<button id="btn2" class="btn btn-outline-secondary">2</button>
+					<button id="btn3" class="btn btn-outline-secondary">3</button>
+					<button id="btn4" class="btn btn-outline-secondary">4</button>
+					<button id="btn5" class="btn btn-outline-secondary">5</button>
+					<br><br>
+					<!-- Button to generate a random story -->
+					<button id="btn6" class="btn btn-primary">Generate a random story</button>
+				</div>
+			</div>
+
+			<!-- Output card -->
+			<div class="card mt-3">
+				<div class="card-header">
+					<h3>Read Aloud</h3>
+				</div>
+				
+				<div class="card-body">
+					<!-- Button to speak story -->
+					<button id="speakBtn" class="btn btn-success">Speak the value of var textToSpeak</button>
+					<br><br>
+					<!-- Button to reset the story to blank -->
+					<button id="btn7" class="btn btn-warning mb-3">Reset the story</button>
+					<!-- Story to be shown to the user in text form -->
+					<p id="storyText" class="mb-0"></p>
+				</div>
+			</div>
 		</div>
 
-		<div class="panel-body">
-			<!-- Buttons to generate story -->
-			<button id="btn1" class="btn">1</button>
-			<button id="btn2" class="btn">2</button>
-			<button id="btn3" class="btn">3</button>
-			<button id="btn4" class="btn">4</button>
-			<button id="btn5" class="btn">5</button>
-			<br><br>
-			<!-- Button to generate a random story -->
-			<button id="btn6" class="btn btn-primary">Generate a random story</button>
+		<!-- Add custom words to arrays card -->
+		<div class="card mt-3 col-sm-6">
+			<div class="card-header">
+				<h3>Add Your Own Custom Words</h3>
+			</div>
+
+			<div class="card-body">
+				<form action="">
+					<!-- Input field to add a custom word -->
+					<label for="customWord" class="form-label">Enter a word:</label>
+					<input type="text" id="customWord" name="customWord" class="form-control">
+					
+					<!-- Dropdown menu to choose what list to append the custom word to -->
+					<label for="appendToList" class="form-label mt-2">Add your word to:</label>
+					<select class="form-select" name="appendToList" id="appendToList">
+						<option value="1">List 1 - Nouns</option>
+						<option value="2">List 2 - Verbs</option>
+						<option value="3">List 3 - Adjectives</option>
+						<option value="4">List 4 - Animals</option>
+						<option value="5">List 5 - Places</option>
+					</select>
+				</form>
+
+				<!-- Button to append the custom word to the chosen list -->
+				<button id="btn8" class="btn btn-danger mt-4">Add new word!</button>
+			</div>
 		</div>
 	</div>
-
-	<!-- Output panels -->
-	<div class="panel panel-default">
-		<div class="panel-heading">
-			<h3>Read Aloud</h3>
-		</div>
-		
-		<div class="panel-body">
-			<!-- Button to speak story -->
-			<button id="speakBtn" class="btn btn-success">Speak the value of var textToSpeak</button>
-			<br><br>
-			<!-- Button to reset the story to blank -->
-			<button id="btn7" class="btn btn-warning	">Reset the story</button>
-			<br><br>
-			<!-- Story to be shown to the user in text form -->
-			<p id="storyText"></p>
-			<script src="js/app.js"></script>
-		</div>
-	</div>
+	
+	<!-- Custom JS file -->
+	<script src="js/app.js"></script>
 </body>
 </html>
