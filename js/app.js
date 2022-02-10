@@ -16,6 +16,7 @@ var button5 = document.querySelector('#btn5');
 var speakButton = document.querySelector('#speakBtn');
 var button6 = document.querySelector('#btn6');
 var button7 = document.querySelector('#btn7');
+var button8 = document.querySelector('#btn8');
 
 // Word bank
 const nouns = ["The turkey","Mom","Dad","The dog","My teacher","The elephant","The cat"]; 
@@ -87,4 +88,35 @@ button6.onclick = function() {
 // button7 resets the sentence back to an empty array
 button7.onclick = function() {
 	sentence = ["","","","",""];
+}
+
+// button8 will add the user's custom word to their chosen array
+button8.onclick = function() {
+	var customWord = document.getElementById("customWord").value;
+	var appendToList = document.getElementById("appendToList").value;
+	var listName;
+	switch (appendToList) {
+		case "1":
+			nouns.push(customWord);
+			listName = "List 1 - Nouns";
+			break;
+		case "2":
+			verbs.push(customWord);
+			listName = "List 2 - Verbs";
+			break;
+		case "3":
+			adjectives.push(customWord);
+			listName = "List 3 - Adjectives";
+			break;
+		case "4":
+			animals.push(customWord);
+			listName = "List 4 - Animals";
+			break;
+		case "5":
+			places.push(customWord);
+			listName = "List 5 - Places";
+	}
+
+	// Inform the user that their custom word was successfully added
+	alert(`You successfully added "${customWord}" to ${listName}!`);
 }
